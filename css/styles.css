@@ -1,0 +1,108 @@
+/* Estilos para el cuerpo */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    overflow: hidden;
+}
+
+/* Contenedor del slider */
+#slider {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start; /* Alinear el contenido en la parte superior */
+    justify-content: flex-start; /* Alinear el contenido a la izquierda */
+}
+
+/* Contenedor de las diapositivas */
+.slides {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+/* Cada diapositiva individual */
+.slide {
+    position: relative;
+    flex: 0 0 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;  /* Alinear el contenido a la izquierda */
+    align-items: flex-start;      /* Alinear el contenido en la parte superior */
+}
+
+
+/* Imagen principal dentro de cada diapositiva */
+.main-image {
+    width: 100%;
+    height: auto;  /* Mantiene la proporción de la imagen */
+    max-height: 100%;
+    object-fit: contain;
+    position: relative;
+}
+
+/* Zona de hover que coincide con la imagen principal */
+.hover-zone {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 2;
+    background: rgba(128, 128, 128, 0.3); /* Fondo gris con 30% de opacidad para visualizar las áreas de hover */
+    transition: background 0.2s ease;
+}
+
+/* Imagen que se expande al pasar el mouse sobre la zona de hover */
+.expand-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    object-fit: contain;
+    transition: width 0.3s ease, height 0.3s ease;
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* Estilos para la observación debajo de la imagen emergente */
+.observation {
+    position: absolute;
+    width: 75%;  /* Ocupar solo el 75% del tamaño de la imagen principal */
+    background: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.5em;
+    text-align: left;
+    opacity: 0;  /* Por defecto oculto */
+    transition: opacity 0.3s ease;
+    z-index: 4;
+}
+
+@media (max-width: 768px) {
+    .observation {
+        font-size: 0.85em;  /* Reducir el tamaño de la fuente en pantallas medianas */
+        width: 85%;  /* Ocupar un poco más del ancho en pantallas pequeñas */
+        max-width: 450px;  /* Reducir el tamaño máximo */
+    }
+}
+
+@media (max-width: 480px) {
+    .observation {
+        font-size: 0.75em;  /* Reducir más el tamaño de la fuente en pantallas pequeñas */
+        width: 95%;  /* Casi el ancho completo en dispositivos móviles */
+        max-width: 300px;  /* Tamaño máximo reducido */
+        padding: 8px;  /* Reducir el padding para mejorar el espacio disponible */
+    }
+}
