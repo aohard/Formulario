@@ -83,26 +83,10 @@ body {
     color: #ffffff;
     padding: 10px;
     border-radius: 5px;
-    font-size: 1.5em;
+    font-size: 1em;
     text-align: left;
     opacity: 0;  /* Por defecto oculto */
     transition: opacity 0.3s ease;
     z-index: 4;
 }
 
-@media (max-width: 768px) {
-    .observation {
-        font-size: 0.85em;  /* Reducir el tamaño de la fuente en pantallas medianas */
-        width: 85%;  /* Ocupar un poco más del ancho en pantallas pequeñas */
-        max-width: 450px;  /* Reducir el tamaño máximo */
-    }
-}
-
-@media (max-width: 480px) {
-    .observation {
-        font-size: 0.75em;  /* Reducir más el tamaño de la fuente en pantallas pequeñas */
-        width: 95%;  /* Casi el ancho completo en dispositivos móviles */
-        max-width: 300px;  /* Tamaño máximo reducido */
-        padding: 8px;  /* Reducir el padding para mejorar el espacio disponible */
-    }
-}
