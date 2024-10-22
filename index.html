@@ -3,40 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imagen con Zonas Hover y Múltiples Imágenes Emergentes</title>
-    <link rel="stylesheet" href="css/styles.css"> <!-- Vinculación al archivo CSS -->
+    <title>Listas Desplegables Dinámicas</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div id="slider">
-        <div class="slides">
-            <!-- Diapositiva con múltiples imágenes emergentes -->
-            <div class="slide">
-                <img src="img/Imagen1.png" alt="Imagen Principal" class="main-image" id="mainImage">
-                
-                <!-- Zona de hover 1 -->
-                <div class="hover-zone" id="hover1"></div>
-                <img src="img/Imagen2.png" alt="Imagen Emergente 1" class="expand-image" id="expandImage1">
-                <!-- Observación de la imagen emergente 1 -->
-                <div class="observation" id="observation1">Está lista desplegable del origen de la solicitud, tendrá el valor WEB por defecto cuando la gestión se haya iniciado por una solicitud de baja cargada desde el portal. En caso de que el origen de la gestión no sea por una solicitud de baja cargada por el portal web, se deberá seleccionar la opción que corresponda.
-                </div>
 
-                <!-- Zona de hover 2 -->
-                <div class="hover-zone" id="hover2"></div>
-                <img src="img/Imagen3.png" alt="Imagen Emergente 2" class="expand-image" id="expandImage2">
-                <!-- Observación de la imagen emergente 2 -->
-                <div class="observation" id="observation2">Registrar si corresponde a una llamada Entrante, Saliente o si corresponde al seguimiento de una Gestión. 
-                </div>
+    <div class="contenedor">
+        <!-- Lista Origen -->
+        <div class="campo">
+            <label for="lista1">Origen:</label>
+            <select id="lista1">
+                <option value="">Seleccionar...</option>
+                <option value="redes">Redes Sociales</option>
+                <option value="otros">Otros orígenes (telefónico/Redes/Otros)</option>
+                <option value="callcenter">Call Center Administrativo</option>
+            </select>
+        </div>
 
-                <!-- Zona de hover 3 -->
-                <div class="hover-zone" id="hover3"></div>
-                <img src="img/Imagen4.png" alt="Imagen Emergente 3" class="expand-image" id="expandImage3">
-                <!-- Observación de la imagen emergente 3 -->
-                <div class="observation" id="observation3">Si el cliente solicita la baja de alguno de los servicios contratados dejando alguno activo, se considera BAJA PARCIAL. Si el cliente solicita la baja de todos los servicios contratados se considera BAJA TOTAL. 
-                </div>
-            </div>
+        <!-- Lista Tipo de Gestión -->
+        <div class="campo">
+            <label for="lista2">Tipo de Gestión:</label>
+            <select id="lista2">
+                <option value="">- Seleccione -</option>
+                <option value="saliente">Saliente</option>
+                <option value="entrante">Entrante</option>
+                <option value="gestion">Gestión</option>
+            </select>
+        </div>
+
+        <!-- Lista Tipo de Baja -->
+        <div class="campo">
+            <label for="lista3">Tipo de baja:</label>
+            <select id="lista3">
+                <option value="">Seleccionar...</option>
+                <option value="parcial">Parcial</option>
+                <option value="total">Total</option>
+            </select>
+        </div>
+
+        <!-- Div para mostrar la descripción -->
+        <div id="descripcion" class="descripcion">
+            <!-- La descripción se mostrará aquí -->
         </div>
     </div>
 
-    <script src="js/script.js"></script> <!-- Vinculación al archivo JavaScript -->
+
+    
+    
+
+    <script src="js/script.js"></script>
+
 </body>
 </html>

@@ -1,92 +1,111 @@
-/* Estilos para el cuerpo */
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
     font-family: Arial, sans-serif;
-    min-height: 100vh;
     background-color: #f0f0f0;
-    overflow: hidden;
-}
-
-/* Contenedor del slider */
-#slider {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+    color: #333;
+    padding: 20px;
     display: flex;
-    align-items: flex-start; /* Alinear el contenido en la parte superior */
-    justify-content: flex-start; /* Alinear el contenido a la izquierda */
+    justify-content: flex-start; /* Alinear horizontalmente al centro */
+    align-items: flex-start; /* Alinear verticalmente al centro */
+    min-height: 100vh;
+    margin: 0;
+    flex-direction: column; /* Para asegurar que el contenido se disponga de manera vertical por defecto */
 }
 
-/* Contenedor de las diapositivas */
-.slides {
+.contenedor {
+    width: 100%;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+/* Para garantizar una buena visualización tanto en dispositivos horizontales como verticales */
+.campo {
     display: flex;
-    height: 100%;
-    width: 100%;
-    flex-wrap: nowrap;
+    flex-direction: column; /* Disposición vertical por defecto */
+    align-items: flex-start;
+    margin-bottom: 20px;
 }
 
-/* Cada diapositiva individual */
-.slide {
-    position: relative;
-    flex: 0 0 100%;
-    height: 100%;
-    display: flex;
-    justify-content: flex-start;  /* Alinear el contenido a la izquierda */
-    align-items: flex-start;      /* Alinear el contenido en la parte superior */
-}
-
-
-/* Imagen principal dentro de cada diapositiva */
-.main-image {
-    width: 100%;
-    height: auto;  /* Mantiene la proporción de la imagen */
-    max-height: 100%;
-    object-fit: contain;
-    position: relative;
-}
-
-/* Zona de hover que coincide con la imagen principal */
-.hover-zone {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    z-index: 2;
-    background: rgba(128, 128, 128, 0.3); /* Fondo gris con 30% de opacidad para visualizar las áreas de hover */
-    transition: background 0.2s ease;
-}
-
-/* Imagen que se expande al pasar el mouse sobre la zona de hover */
-.expand-image {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 0;
-    height: 0;
-    object-fit: contain;
-    transition: width 0.3s ease, height 0.3s ease;
-    z-index: 3;
-    pointer-events: none;
-}
-
-/* Estilos para la observación debajo de la imagen emergente */
-.observation {
-    position: absolute;
-    width: 75%;  /* Ocupar solo el 75% del tamaño de la imagen principal */
-    background: rgba(0, 0, 0, 0.7);
-    color: #ffffff;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 0.89em;
+label {
+    width: 100%; /* Utiliza todo el ancho disponible */
     text-align: left;
-    opacity: 0;  /* Por defecto oculto */
-    transition: opacity 0.3s ease;
-    z-index: 4;
+    font-weight: bold;
+    margin-bottom: 5px; /* Añade espacio entre el label y el select */
 }
 
+select {
+    width: 100%; /* Select ocupa todo el ancho */
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Media Queries para ajustar horizontal y verticalmente */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .contenedor {
+        padding: 15px;
+    }
+
+    .campo {
+        margin-bottom: 15px;
+    }
+
+    select {
+        padding: 8px;
+    }
+}
+
+@media (orientation: landscape) {
+    body {
+        flex-direction: row; /* Los elementos se disponen en fila en orientación horizontal */
+        padding: 10px;
+    }
+
+    .contenedor {
+        max-width: 90%; /* Usar la mayoría del ancho disponible en modo horizontal */
+        padding: 20px;
+    }
+
+    .campo {
+        flex-direction: row; /* Los labels y selects se disponen en fila en modo horizontal */
+        justify-content: space-between; /* Asegura que el label y el select tengan espacio entre ellos */
+        width: 100%;
+    }
+
+    label {
+        width: 30%; /* Ajusta el ancho del label en modo horizontal */
+        text-align: left;
+    }
+
+    select {
+        width: 65%; /* Ajusta el ancho del select */
+    }
+}
+
+/* Media Queries para dispositivos aún más pequeños como teléfonos en vertical */
+@media (max-height: 500px) {
+    .contenedor {
+        padding: 10px;
+    }
+
+    .campo {
+        margin-bottom: 10px;
+    }
+
+    select {
+        padding: 6px;
+    }
+}
