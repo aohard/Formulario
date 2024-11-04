@@ -6,53 +6,54 @@ function actualizarDescripcion(event) {
     switch (event.target.id) {
         case "lista1":
             if (event.type === "focus") {
-                descripcion = "Está lista desplegable del origen de la solicitud, tendrá el valor WEB por defecto cuando la gestión se haya iniciado por una solicitud de baja cargada desde el portal. En caso de que el origen de la gestión no sea por una solicitud de baja cargada por el portal web, se deberá seleccionar la opción que corresponda.​";
+                descripcion = "En la sección Origen tenés que elegir el área a la cual pertenecés. En caso de que la gestión de baja se haya iniciado desde la Web, se mostrará en esta sección.";
             } else {
                 switch (event.target.value) {
                     case "redes":
-                        descripcion = "La gestión se realiza a través de Redes Sociales.";
+                        descripcion = "Seleccioná esta opción si sos parte de este equipo.";
                         break;
                     case "otros":
-                        descripcion = "Otros orígenes incluyen gestiones telefónicas o redes y otros.";
+                        descripcion = "Seleccioná esta opción si sos parte de alguno de estos equipos.";
                         break;
                     case "callcenter":
-                        descripcion = "La gestión se realizó a través del Call Center Administrativo.";
+                        descripcion = "Seleccioná esta opción si sos parte de este equipo.";
                         break;
                 }
             }
             break;
         case "lista2":
             if (event.type === "focus") {
-                descripcion = "Registrar si corresponde a una llamada Entrante, Saliente o si corresponde al seguimiento de una Gestión. ​";
+                descripcion = "En esta sección debes registrar a qué tipo de gestión corresponde el registro.";
             } else {
                 switch (event.target.value) {
                     case "saliente":
-                        descripcion = "Tipo de gestión saliente: implica que el contacto fue iniciado desde Telecentro.";
+                        descripcion = "Seleccioná esta opción cuando proactivamente vos hayas iniciado el contacto con el cliente.";
                         break;
                     case "entrante":
-                        descripcion = "Tipo de gestión entrante: el cliente se comunica directamente con Telecentro.";
+                        descripcion = "Seleccioná esta opción cuando haya sido el cliente el que se contactó con nosotros.";
                         break;
                     case "gestion":
-                        descripcion = "Gestión general que implica seguimiento o manejo de casos específicos.";
+                        descripcion = "Seleccioná esta opción únicamente ante gestiones de seguimiento sobre casos específicos.";
                         break;
                 }
             }
             break;
         case "lista3":
             if (event.type === "focus") {
-                descripcion = "Si el cliente solicita la baja de alguno de los servicios contratados dejando alguno activo, se considera BAJA PARCIAL. Si el cliente solicita la baja de todos los servicios contratados se considera BAJA TOTAL. ​";
+                descripcion = "En esta sección tenés que elegir qué tipo de baja se aplicará en el cliente.";
             } else {
                 switch (event.target.value) {
                     case "parcial":
-                        descripcion = "Baja parcial: se da de baja un servicio, pero se mantienen otros activos.";
+                        descripcion = "Seleccioná esta opción cuando estés gestionando la baja de alguno de los servicios principales y el cliente mantiene algún otro activo.";
                         break;
                     case "total":
-                        descripcion = "Baja total: se procede a dar de baja todos los servicios del cliente.";
+                        descripcion = "Seleccioná esta opción cuando estés gestionando la baja total de los servicios principales del cliente.";
                         break;
                 }
             }
             break;
     }
+    
 
     // Mostrar la descripción
     descripcionDiv.innerText = descripcion;
